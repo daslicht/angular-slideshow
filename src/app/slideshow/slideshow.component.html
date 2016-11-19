@@ -1,0 +1,23 @@
+<div>
+  
+  <div>
+    <h2>Slideshows</h2>
+  </div>
+
+  <div>
+    <ul class="sldieshows">
+      <li *ngFor="let slideshow of slideshows"
+        [class.selected]="slideshow === selectedSlideshow"
+        (click)="onSelect(slideshow)"
+        
+      >
+        <a [routerLink]="['/slideshows', slideshow.id]">
+          <span class="badge">{{slideshow.id}}</span> {{slideshow.name}}
+        </a>
+        <button class="delete" (click)="delete(slideshow); $event.stopPropagation()">x</button>
+      </li>
+    </ul>
+  </div>
+  Child:
+    <router-outlet></router-outlet>
+</div>

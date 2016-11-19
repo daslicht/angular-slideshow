@@ -1,0 +1,18 @@
+<p>
+  slideshow-details works!
+</p>
+
+<div *ngIf="slideshow">
+ {{slideshow.name}}
+</div>
+
+<ul *ngIf="slides" class="slides">
+  <li *ngFor="let slide of slides"    
+  >
+    {{slide.name}}
+    <!--<a [routerLink]="['/slideshows', slideshow.id]">
+      <span class="badge">{{slideshow.id}}</span> {{slideshow.name}}
+    </a>
+    <button class="delete" (click)="delete(slideshow); $event.stopPropagation()">x</button>-->
+  </li>
+</ul>

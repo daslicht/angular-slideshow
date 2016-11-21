@@ -9,10 +9,9 @@
       <li *ngFor="let slideshow of slideshows"
         [class.selected]="slideshow === selectedSlideshow"
         (click)="onSelect(slideshow)"
-        
       >
-        <a [routerLink]="['/slideshows', slideshow.id]">
-          <span class="badge">{{slideshow.id}}</span> {{slideshow.name}}
+        <a [routerLink]="['/slideshows', slideshow.$key]">
+           {{slideshow.name}}
         </a>
         <button class="delete" (click)="delete(slideshow); $event.stopPropagation()">x</button>
       </li>

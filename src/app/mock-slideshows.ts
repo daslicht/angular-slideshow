@@ -1,6 +1,6 @@
-import { Slideshow } from './Slideshow';
 
-export const SLIDESHOWS: Slideshow[] = [
+
+export const _SLIDESHOWS= [
   {id: 11, name: 'Slideshow 1'},
   {id: 12, name: 'Slideshow 2'},
   {id: 13, name: 'Slideshow 3'},

@@ -23,6 +23,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import './rxjs-extensions';
 import { SlideshowComponent } from './slideshow/slideshow.component';
 import { SlideshowDetailsComponent } from './slideshow-details/slideshow-details.component';
+import { SlideDetailComponent } from './slide-detail/slide-detail.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SlideshowDetailsComponent } from './slideshow-details/slideshow-details
     AppRoutingComponent,
     HeroSearchComponent,
     SlideshowComponent,
-    SlideshowDetailsComponent
+    SlideshowDetailsComponent,
+    SlideDetailComponent
   ],
   imports: [
     BrowserModule,

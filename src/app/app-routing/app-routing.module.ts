@@ -5,6 +5,7 @@ import { HeroesComponent }      from '../hero/heroes.component';
 import { HeroDetailComponent }  from '../hero-detail/hero-detail.component';
 import { SlideshowComponent } from '../slideshow/slideshow.component';
 import { SlideshowDetailsComponent } from '../slideshow-details/slideshow-details.component';
+import { SlideDetailComponent } from '../slide-detail/slide-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -13,8 +14,14 @@ const routes: Routes = [
   { path: 'heroes',     component: HeroesComponent },
   { path: 'slideshows', component: SlideshowComponent,
       children:[
-         { path: '', redirectTo: '11', pathMatch: 'full' }, //fix this
-         { path: ':id',     component: SlideshowDetailsComponent }
+         { path: '', redirectTo: '-KW8HuVOvu8vN-VO08dv', pathMatch: 'full' }, //fix this
+         { path: ':id',     component: SlideshowDetailsComponent,
+            children:[
+              { path: '',     component: SlideDetailComponent},
+              // { path: '', redirectTo: 'view', pathMatch: 'full' }, //fix this
+              { path: ':slide_key',     component: SlideDetailComponent}
+            ]
+          }
       ]
   },
 ];

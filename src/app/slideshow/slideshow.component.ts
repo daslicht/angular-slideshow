@@ -1,8 +1,8 @@
-import { Slide } from '../slide';
+import { Slide } from '../_data/slide';
 import { Component, OnInit } from '@angular/core';
 import { Router }   from '@angular/router';
-import { SlideshowService } from '../slideshow.service';
-import { Slideshow } from '../slideshow';
+import { SlideshowService } from '../_data/slideshow.service';
+import { Slideshow } from '../_data/slideshow';
 
 @Component({
   selector: 'app-slideshow',

@@ -1,9 +1,9 @@
-import { Slideshow } from '../slideshow';
+import { Slideshow } from '../_data/slideshow';
 import { Component, OnInit } from '@angular/core';
-import { SlideshowService } from '../slideshow.service';
+import { SlideshowService } from '../_data/slideshow.service';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
-import { Slide } from '../slide';
+import { Slide } from '../_data/slide';
 
 @Component({
   selector: 'app-slideshow-details',
@@ -35,13 +35,14 @@ export class SlideshowDetailsComponent implements OnInit {
   // }
 
   ngOnInit() {
+   
     this.sub = this.route.params.subscribe(params => {
         this.$key =  params['id']; // (+) converts string 'id' to a number
         if(this.$key != ''){
-            console.log(' $key : ', this.$key)
+            console.log('slideshow details, $key : ', this.$key)
             this.slideshow = this.slideshowService.getSlideshow(this.$key)
             this.slides = this.slideshow.slides
-            console.log(' this.slides',  this.slides)
+           // console.log(' this.slides',  this.slides)
           //console.log('this.slideshowService.getSlideshow(this.$key) ', this.slideshowService.getSlideshow(this.$key))
         // if( this.slideshow.slides) {
         //   this.slides = this.slideshow.slides

@@ -9,7 +9,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api/in-memory-web-ap
 import { InMemoryDataService }  from './in-memory-data.service';
 
 import { HeroService }  from './hero.service';
-import { SlideshowService } from './slideshow.service';
+import { SlideshowService } from './_data/slideshow.service';
 
 import { HeroesComponent } from './hero/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';

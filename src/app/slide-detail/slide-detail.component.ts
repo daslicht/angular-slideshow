@@ -1,8 +1,8 @@
-import { Slide } from '../slide';
+import { Slide } from '../_data/slide';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params }   from '@angular/router';
+import { ActivatedRoute, Params, RouterState }   from '@angular/router';
 import { Location }                 from '@angular/common';
-import { SlideshowService } from '../slideshow.service';
+import { SlideshowService } from '../_data/slideshow.service';
 
 @Component({
   selector: 'app-slide-detail',
@@ -18,14 +18,16 @@ export class SlideDetailComponent implements OnInit {
   constructor(  
     private slideshowService: SlideshowService,
     private route: ActivatedRoute,
+   // private state : RouterState,
     private location: Location) { }
 
   ngOnInit() {
      this.sub = this.route.params.subscribe(params => {
         this.$key =  params['id']; // (+) converts string 'id' to a number
-        console.log(' params: ', params)
+        console.log('slide-details  params: ', params)
         if(this.$key != ''){
         console.log(' $key : ', this.$key)
+        
         this.slide = this.slideshowService.getSlide(this.$key)
           //console.log('this.slideshowService.getSlideshow(this.$key) ', this.slideshowService.getSlideshow(this.$key))
          // this.slides = this.slideshow.slides
@@ -34,6 +36,10 @@ export class SlideDetailComponent implements OnInit {
         // }
        }
     });
-  }
 
+    let foo = this.route.fragment.subscribe( data => {
+        console.log('data: ',data)
+    });
+
+  }
 }
